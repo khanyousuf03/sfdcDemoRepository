@@ -1,0 +1,15 @@
+
+   
+<project name="salesforce" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+  <property file="build.properties"/>
+  <property environment="env"/>
+   
+     <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+ <classpath>
+            <pathelement location="${basedir}/Lib/ant-salesforce.jar" />        	
+        </classpath>
+    </taskdef>
+  <target name="deployall">
+  <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" logtype="Detail" deployRoot="force-app/main/default" checkonly="false" runAllTests="false"/>
+  </target>
+  </project>
