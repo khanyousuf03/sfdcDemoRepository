@@ -7,5 +7,6 @@
 **/
 trigger demo on Contact (before insert) {
     integer i = 0;
+    integer j = 10;
     
 }
